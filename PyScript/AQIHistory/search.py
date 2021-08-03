@@ -3,7 +3,7 @@
 # File              : search.py
 # Author            : sanwich <122079260@qq.com>
 # Date              : 2021-08-03 09:16:13
-# Last Modified Date: 2021-08-03 09:16:13
+# Last Modified Date: 2021-08-03 09:28:52
 # Last Modified By  : sanwich <122079260@qq.com>
 # -*- encoding: utf-8 -*-
 '''
@@ -98,4 +98,4 @@ if __name__ == "__main__":
     df.to_excel(r"{}{:4d}{:0>2d}{:0>2d}-{:4d}{:0>2d}{:0>2d}.xlsx".format(
         city, start_dt.year, start_dt.month, start_dt.day, end_dt.year,
         end_dt.month, end_dt.day))
-    print("处理完成！")
+    input("处理完成！")
