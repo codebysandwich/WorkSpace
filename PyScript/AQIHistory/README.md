@@ -1,7 +1,7 @@
 <!--
  * @Author: sandwich
  * @Date: 2021-08-04 20:49:18
- * @LastEditTime: 2021-08-04 21:19:30
+ * @LastEditTime: 2021-08-04 21:32:39
  * @LastEditors: sandwich
  * @Description: In User Settings Edit
  * @FilePath: /AQIHistory/README.md
@@ -45,3 +45,22 @@
 - 
 - 
 ## 使用说明
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
