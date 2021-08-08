@@ -16,6 +16,10 @@
   <property name="windowTitle">
    <string>获取城市小时数据</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -139,7 +143,7 @@
      <x>0</x>
      <y>0</y>
      <width>593</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -153,7 +157,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionxs">
    <property name="text">
-    <string>存储路径</string>
+    <string>退出</string>
    </property>
   </action>
  </widget>
