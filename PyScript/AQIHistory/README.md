@@ -25,7 +25,7 @@
 
 <!--![mac](https://gitee.com/codebysandwich/source/raw/master/picgo/20210809103044.png)-->
 
-<img src=https://gitee.com/codebysandwich/source/raw/master/picgo/20210809103044.png width=70%></img>
+<img src=https://gitee.com/codebysandwich/source/raw/master/picgo/20210809103044.png width=60%></img>
 ![win](https://gitee.com/codebysandwich/source/raw/master/picgo/1628475507(1).png)
 
 ## 使用说明
