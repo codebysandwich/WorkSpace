@@ -13,7 +13,6 @@
 🔥本工具使用公开数据下载及发布信息，仅用于个人学习
 ```
 
-
 <!-- TOC -->
 
 - [使用截图](#使用截图)
@@ -44,4 +43,4 @@
 ![](https://gitee.com/codebysandwich/source/raw/master/picgo/AQIHistory_tree.png)
 
 ## tips
-如果你也是python使用者,本项目中的search.py文件提供了terminal程序可实现同样的效果！
+如果你也是python使用者,本项目中的search.py文件提供了terminal程序可实现同样的效果！如果你也是Github用户欢迎star,fork。
