@@ -40,6 +40,9 @@ class RunThread(QThread):
                 city_df = city_handler(file_path, self.city)
                 self._signal_status.emit(r"气象数据正在下载……")
                 weather_df = weather_handler(weather)
+                # 存储气象数据
+                weather_df.to_excel("./file/{}_{:4d}{:0>2d}{:0>2d}.xlsx".format(
+                                    self.code, date.year, date.month, date.day))
                 msg = r"{:4d}{:0>2d}{:0>2d}气象数据处理完成!".format(
                         date.year, date.month, date.day)
                 self._signal.emit(msg)

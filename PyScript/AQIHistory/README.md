@@ -1,10 +1,10 @@
 <!--
  * @Author: sandwich
  * @Date: 2021-08-04 20:49:18
- * @LastEditTime: 2021-08-04 21:35:46
+ * @LastEditTime: 2021-08-15 19:15:15
  * @LastEditors: sandwich
  * @Description: In User Settings Edit
- * @FilePath: /AQIHistory/README.md
+ * @FilePath: \AQIHistory\README.md
 -->
 
 # AQIHistory使用说明
@@ -15,9 +15,11 @@
 
 <!-- TOC -->
 
-- [使用截图](#使用截图)
+- [软件截图](#软件截图)
 - [使用说明](#使用说明)
+- [v1.3.1更新](#v131更新)
 - [tips](#tips)
+    - [气象下载](#气象下载)
 
 <!-- /TOC -->
  
@@ -44,5 +46,13 @@
 下载的全国城市小时数据会存储在压缩包里`file`文件夹下, 下载合并的结果数据会在压缩包根目录下(和程序在一级目录下)
 ![](https://gitee.com/codebysandwich/source/raw/master/picgo/AQIHistory_tree.png)
 
+## v1.3.1更新
+🚀 增加气象数据下载存储
+![](https://gitee.com/codebysandwich/source/blob/master/picgo/v.1.3.1_up.jpg)
+
 ## tips
 如果你也是python使用者,本项目中的search.py文件提供了terminal程序可实现同样的效果！如果你也是Github用户欢迎star,fork。
+
+### 气象下载
+- 气象下载脚本
+
