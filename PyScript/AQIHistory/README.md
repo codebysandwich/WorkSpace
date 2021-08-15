@@ -1,10 +1,10 @@
 <!--
  * @Author: sandwich
  * @Date: 2021-08-04 20:49:18
- * @LastEditTime: 2021-08-15 19:15:15
+ * @LastEditTime: 2021-08-15 19:28:06
  * @LastEditors: sandwich
  * @Description: In User Settings Edit
- * @FilePath: \AQIHistory\README.md
+ * @FilePath: \PyScript\AQIHistory\README.md
 -->
 
 # AQIHistory使用说明
@@ -48,11 +48,11 @@
 
 ## v1.3.1更新
 🚀 增加气象数据下载存储
-![](https://gitee.com/codebysandwich/source/blob/master/picgo/v.1.3.1_up.jpg)
+![](https://gitee.com/codebysandwich/source/raw/master/picgo/v.1.3.1_up.jpg)
 
 ## tips
 如果你也是python使用者,本项目中的search.py文件提供了terminal程序可实现同样的效果！如果你也是Github用户欢迎star,fork。
 
 ### 气象下载
-- 气象下载脚本
+- 气象下载脚本 [地址](https://github.com/codebysandwich/WorkSpace/tree/main/PyScript/WeatherDownload)
 
