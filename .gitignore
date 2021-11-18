@@ -7,3 +7,6 @@
 # docignore
 *.xlsx
 *.xls
+
+# jupyter
+.ipynb_checkpoints
