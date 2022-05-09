@@ -3,7 +3,7 @@
 # File              : workstat.py
 # Author            : sandwich <122079260@qq.com>
 # Date              : 2021-11-17 17:00:41
-# Last Modified Date: 2021-11-18 09:59:18
+# Last Modified Date: 2021-11-17 17:27:50
 # Last Modified By  : sandwich <122079260@qq.com>
 
 import pandas as pd
@@ -32,11 +32,16 @@ if __name__ == "__main__":
 
     groups = df.groupby(['工号', '日期'])
     res = groups.apply(cal)
+    res[res['19-21点签到次数'] > 1] = 1
+    res[res['21点后签到次数'] > 1] = 1
+    res['19-21点签到次数'][res['21点后签到次数'] == 1] = 0
     res.to_excel('打卡情况明细.xlsx')
-    p1 = res[res['打卡时间差'] >= 6].groupby(['工号', '姓名'])[['打卡次数']].count()
-    p2 = res[res['打卡时间差'] >= 6].groupby(['工号',
+
+    p1 = res[res['打卡时间差'] >= 8].groupby(['工号', '姓名'])[['打卡次数']].count()
+    p2 = res[res['打卡时间差'] >= 8].groupby(['工号',
                                          '姓名'])[['19-21点签到次数',
                                                  '21点后签到次数']].sum()
+    
     pd.concat([p1, p2], axis=1).to_excel('./月打卡情况统计.xlsx')
 
     input('输入任意键退出>>')
