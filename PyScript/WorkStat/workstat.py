@@ -32,9 +32,9 @@ if __name__ == "__main__":
 
     groups = df.groupby(['工号', '日期'])
     res = groups.apply(cal)
-    res[res['19-21点签到次数'] > 1] = 1
-    res[res['21点后签到次数'] > 1] = 1
-    res['19-21点签到次数'][res['21点后签到次数'] == 1] = 0
+    res.loc[res['19-21点签到次数'] > 1, '19-21点签到次数'] = 1
+    res.loc[res['21点后签到次数'] > 1, '21点后签到次数'] = 1
+    res.loc[res['21点后签到次数'] == 1, '19-21点签到次数'] = 0
     res.to_excel('打卡情况明细.xlsx')
 
     p1 = res[res['打卡时间差'] >= 8].groupby(['工号', '姓名'])[['打卡次数']].count()
