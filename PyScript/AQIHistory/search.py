@@ -3,17 +3,9 @@
 # File              : search.py
 # Author            : sanwich <122079260@qq.com>
 # Date              : 2021-08-03 09:16:13
-# Last Modified Date: 2021-08-03 09:28:52
-# Last Modified By  : sanwich <122079260@qq.com>
+# Last Modified Date: 2023-04-19 13:41:47
+# Last Modified By  : sandwich
 # -*- encoding: utf-8 -*-
-'''
-@Author: sandwich
-@Date: 2021-08-02 09:27:52
-@LastEditTime: 2021-08-02 09:27:52
-@LastEditors: sandwich
-@Description: 查询城市每小时天数据
-@FilePath: /AQIHistory/search.py
-'''
 
 import sys
 import requests

@@ -3,22 +3,22 @@
 # File              : app.py
 # Author            : sanwich <122079260@qq.com>
 # Date              : 2021-08-06 16:05:23
-# Last Modified Date: 2021-08-06 16:49:05
-# Last Modified By  : sanwich <122079260@qq.com>
+# Last Modified Date: 2023-04-19 13:35:58
+# Last Modified By  : sandwich
 
 import sys
 from search import download_cities, city_handler, weather_handler
 from MainWindow import Ui_MainWindow
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
-from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QDate, QThread, pyqtSignal
 from pandas import date_range, concat
+
 
 class RunThread(QThread):
     _signal = pyqtSignal(str)
     _signal_status = pyqtSignal(str)
 
-    def __init__(self, city: str, code: str, dts:list) -> None:
+    def __init__(self, city: str, code: str, dts: list) -> None:
         self.code = code
         self.city = city
         self.dts = dts
@@ -30,7 +30,8 @@ class RunThread(QThread):
         datas = []
         for date in self.dts:
             url = self.url_fmt.format(date.year, date.month, date.day)
-            weather = self.weather_fmt.format(self.code, date.year, date.month, date.day)
+            weather = self.weather_fmt.format(self.code, date.year, date.month,
+                                              date.day)
             file_path = r"./file/{:4d}{:0>2d}{:0>2d}.csv".format(
                 date.year, date.month, date.day)
             self._signal_status.emit(r"站点数据{}正在下载……".format(file_path))
@@ -41,21 +42,23 @@ class RunThread(QThread):
                 self._signal_status.emit(r"气象数据正在下载……")
                 weather_df = weather_handler(weather)
                 # 存储气象数据
-                weather_df.to_excel("./file/{}_{:4d}{:0>2d}{:0>2d}.xlsx".format(
-                                    self.code, date.year, date.month, date.day))
+                weather_df.to_excel(
+                    "./file/{}_{:4d}{:0>2d}{:0>2d}.xlsx".format(
+                        self.code, date.year, date.month, date.day))
                 msg = r"{:4d}{:0>2d}{:0>2d}气象数据处理完成!".format(
-                        date.year, date.month, date.day)
+                    date.year, date.month, date.day)
                 self._signal.emit(msg)
                 datas.append(concat([city_df, weather_df], axis=1, sort=False))
         df = concat(datas)
-        df.to_excel('./{}{}_{}.xlsx'.format(self.city, self.dts[0].date(), 
-                    self.dts[-1].date()))
+        df.to_excel('./{}{}_{}.xlsx'.format(self.city, self.dts[0].date(),
+                                            self.dts[-1].date()))
         msg = "处理完成!"
         self._signal.emit(msg)
         self._signal_status.emit("ready")
-    
+
 
 class MainWindow():
+
     def __init__(self):
         self.ui = Ui_MainWindow()
         self.mainwindow = QMainWindow()
@@ -88,21 +91,21 @@ class MainWindow():
                                 QMessageBox.Yes | QMessageBox.No,
                                 QMessageBox.Yes)
             return
-        dts = date_range(start.toString("yyyy-MM-dd"), 
+        dts = date_range(start.toString("yyyy-MM-dd"),
                          end.toString("yyyy-MM-dd"),
                          freq='D').to_list()
-                                
+
         self.thread = RunThread(city, code, dts)
         self.thread._signal.connect(self.__callback)
         self.thread._signal_status.connect(self.__callback_status_bar)
         self.thread.start()
-    
 
     def __callback(self, msg):
         self.ui.listWidget.addItem(msg)
-    
+
     def __callback_status_bar(self, msg):
         self.ui.statusbar.showMessage(msg)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

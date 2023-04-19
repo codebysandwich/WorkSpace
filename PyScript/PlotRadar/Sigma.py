@@ -67,12 +67,12 @@ def data_handle(filepath):
 
 if __name__ == "__main__":
     ext = input(">>请输入消光文件地址:")
-    dep = input(">>请输入退偏文件地址:")
+    # dep = input(">>请输入退偏文件地址:")
 
     ext_data = data_handle(ext)
-    dep_data = data_handle(dep)
+    # dep_data = data_handle(dep)
 
     lidar_pic(ext_data, figpath='./消光.png')
-    lidar_pic(dep_data, vmax=0.4, figpath='./退偏.png')
+    # lidar_pic(dep_data, vmax=0.4, figpath='./退偏.png')
 
     input(">>按任意键退出！")
